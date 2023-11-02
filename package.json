@@ -1,5 +1,9 @@
 {
   "name": "export-moqa-db",
+  "author": {
+    "name": "Maria Laura",
+    "email": "marialauradev@gmail.com"
+  },
   "version": "1.0.0",
   "main": "app.js",
   "license": "MIT",

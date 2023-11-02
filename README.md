@@ -43,9 +43,9 @@ The server will be running at http://localhost:3000
 
 To export data from the Firebase database, you can make an HTTP request to the /download-json endpoint. You should provide a date parameter in the query to specify the date of the data you want to export. For example:
 
-``
+```
 http://localhost:3000/download-json?date=2023-10-31
-``
+```
 This will return the data from the collection corresponding to the provided date in JSON format.
 
 ## Note

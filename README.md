@@ -39,7 +39,7 @@ npm run dev
 
 The server will be running at http://localhost:3000
 
-##Usage
+## Usage
 
 To export data from the Firebase database, you can make an HTTP request to the /download-json endpoint. You should provide a date parameter in the query to specify the date of the data you want to export. For example:
 

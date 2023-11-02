@@ -27,15 +27,15 @@ This project relies on the following dependencies:
 - Make sure you have Node.js installed on your machine
 - Install the project's dependencies. Run the following command in the project's root:
 
-``bash
+```bash
 npm install
-``
+```
 
 - Now, you can run the application with the following command:
 
-``bash
+```bash
 npm run dev
-``
+```
 
 The server will be running at http://localhost:3000
 

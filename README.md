@@ -48,6 +48,9 @@ http://localhost:3000/download-json?date=2023-10-31
 ```
 This will return the data from the collection corresponding to the provided date in JSON format.
 
+![image](https://github.com/mariaLauraDev/query-client-to-firebase/assets/112260675/e1820872-3bdf-4aea-a5b1-279ac121123c)
+
+
 ## Note
 
 This application is intended as a demonstration of how to export data from a Firebase database. Ensure that you properly secure your credentials, follow Firebase security best practices, and protect sensitive information in the `.env` file.

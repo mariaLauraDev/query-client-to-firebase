@@ -1,7 +1,7 @@
 const express = require('express')
 const firebaseConfig = require('./firebaseConfig')
 const { initializeApp } = require('firebase/app')
-const { getFirestore, collection, query, orderBy, limit, getDocs, where } = require('firebase/firestore')
+const { getFirestore, Timestamp, collection, query, orderBy, limit, getDocs, where } = require('firebase/firestore')
 const { getAuth, signInWithEmailAndPassword } = require('firebase/auth')
 require('dotenv').config()
 
@@ -16,12 +16,18 @@ app.get('/download-json', async (req, res) => {
     const auth = getAuth(firebaseApp)
     await signInWithEmailAndPassword(auth, process.env.EMAIL, process.env.PASSWORD)
 
-    const dateToDownload = req.query.date
+    const browserTimezoneOffset = new Date().getTimezoneOffset() * 60
+    const init = req.query.init
+    const end = req.query.end
+
+    const startTimestamp =  new Timestamp(init - browserTimezoneOffset, 0)
+    const endTimestamp = new Timestamp(end - browserTimezoneOffset, 0)
+
     let q = query(
       column,
-      where('data', '==', dateToDownload),
-      //remove the limit to download all data
-      limit(1000),
+      where('Timestamp', '<=', endTimestamp),
+      where('Timestamp', '>=', startTimestamp),
+      limit(2),
     )
 
     const querySnapshot = await getDocs(q)
@@ -32,8 +38,6 @@ app.get('/download-json', async (req, res) => {
         ...doc.data(),
       })
     })
-
-    console.log(dateToDownload, docs.length)
 
     const jsonData = JSON.stringify(docs, null, 2)
     res.json(docs)

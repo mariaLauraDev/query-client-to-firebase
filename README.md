@@ -48,7 +48,7 @@ http://localhost:3000/download-json?init=1693526400&end=1701385200
 ```
 This will return the data from the collection corresponding to the provided date in JSON format.
 
-![image](https://github.com/mariaLauraDev/query-client-to-firebase/assets/112260675/e1820872-3bdf-4aea-a5b1-279ac121123c)
+![image](https://github.com/mariaLauraDev/query-client-to-firebase/assets/112260675/6c3991ee-93b9-4fb1-8288-27ad855ff6b9)
 
 
 ## Note
